@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 // This function generates a computer choice by using Math.random() to generate a random number between 0 and 1 and then using that random number to determine which move is picked with a if statement
 function getComputerChoice() { 
   const randomNumber = Math.random(); 
