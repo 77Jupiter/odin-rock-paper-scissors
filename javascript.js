@@ -11,4 +11,15 @@ function getComputerChoice() {
   }
   return computerMove;
 }
+
+// This function uses the prompt to allow a user to insert a player move. If the move does not equal to a valid move then the function logs a console message and returns. If the move is valid then it returns the playerChoice.
+function getHumanChoice() {
+  const playerChoice = prompt('Pick a move');
+  console.log(playerChoice.toLowerCase());
+  if (playerChoice.toLowerCase() !== 'rock' && playerChoice.toLowerCase() !== 'paper' && playerChoice.toLowerCase() !== 'scissors') {
+    console.log('Please pick a valid move');
+    return;
+  }
+  return playerChoice;
+}
  
