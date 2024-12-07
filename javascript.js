@@ -26,3 +26,54 @@ function getHumanChoice() {
   return playerChoice;
 }
  
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === 'rock') {
+    switch (computerChoice) {
+      case 'rock':
+        console.log("Tie! Rock can't beat Rock");
+        break;
+      case 'paper':
+        computerScore++;
+        console.log('You lose! Paper beats Rock');
+        break;
+      case 'scissors':
+        humanScore++;
+        console.log('You win! Rock beats Scissors');
+    }
+  } else if (humanChoice === 'paper') {
+    switch (computerChoice) {
+      case 'rock':
+        humanScore++;
+        console.log('You win! Paper beats Rock');
+        break;
+      case 'paper': 
+        console.log("Tie! Paper can't beat Paper");
+        break;
+      case 'scissors':
+        computerScore++;
+        console.log('You lose! Scissors beats Paper');
+        break;
+    }
+  } else if (humanChoice === 'scissors') {
+    switch (computerChoice) {
+      case 'rock':
+        computerScore++;
+        console.log('You lose! Rock beats Scissors');
+        break;
+      case 'paper': 
+        humanScore++;
+        console.log('You win! Scissors beats Paper');
+        break;
+      case 'scissors':
+        console.log("Tie! Scissors can't beat Scissors");
+        break;
+    }
+  }
+}
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+playRound(humanChoice, computerChoice);
+
+
