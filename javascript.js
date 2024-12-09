@@ -1,4 +1,4 @@
-// This function generates a computer choice by using Math.random() to generate a random number between 0 and 1 and then using that random number to determine which move is picked with a if statement
+// Function to generate a computer move.
 function getComputerChoice() { 
   const randomNumber = Math.random(); 
   let computerMove;
@@ -12,7 +12,7 @@ function getComputerChoice() {
   return computerMove;
 }
 
-// This function uses the prompt to allow a user to insert a player move. If the move does not equal to a valid move then the function logs a console message and returns. If the move is valid then it returns the playerChoice.
+// Function for player to insert a player move.
 function getHumanChoice() {
   const playerChoice = prompt('Pick a move: rock, paper, scissors').toLowerCase();
   if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
@@ -23,9 +23,12 @@ function getHumanChoice() {
   }
 }
 
+// Function to play five rounds.
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
+
+  // Function to play a round, update and log a result and score.
   function playRound(humanChoice, computerChoice) {
     let result = '';
     if (humanChoice === 'rock') {
